@@ -11,13 +11,10 @@ dependencies:
   flutter:
     sdk: flutter
 
-  # Iconos estilo iOS
   cupertino_icons: ^1.0.8
 
-  # Para conectar con la API de BiciCoruña
   http: ^1.6.0
 
-  # FALTABA ESTO: Para la gestión de estado (MVVM)
   provider: ^6.0.0
 
 dev_dependencies:

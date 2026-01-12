@@ -23,7 +23,6 @@ class StationStatusDTO {
     int mech = 0;
     int elec = 0;
 
-    // Lógica para desglosar tipos
     if (json['vehicle_types_available'] != null) {
       final types = json['vehicle_types_available'] as List;
       for (var t in types) {

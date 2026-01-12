@@ -24,14 +24,16 @@ class StationRepositoryImpl implements StationRepository {
       ]);
 
       if (responses[0].statusCode != 200 || responses[1].statusCode != 200) {
-        throw Exception('Error API BiciCoruña');
+        throw Exception('Error al intentar conectar con API BiciCoruña');
       }
 
       final jsonInfo = json.decode(responses[0].body);
       final jsonStatus = json.decode(responses[1].body);
 
-      final List<dynamic> listInfo = jsonInfo['data']['stations'];
-      final List<dynamic> listStatus = jsonStatus['data']['stations'];
+      final List<Map<String, dynamic>> listInfo = 
+        List<Map<String, dynamic>>.from(jsonInfo['data']['stations'] as List);
+      final List<Map<String, dynamic>> listStatus = 
+        List<Map<String, dynamic>>.from(jsonStatus['data']['stations'] as List);
 
       final Map<String, StationStatusDTO> statusMap = {
         for (var item in listStatus)
