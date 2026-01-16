@@ -10,7 +10,7 @@ import 'package:bici_angel/models/station.dart';
 class StubSystemRepository implements StationRepository {
   @override
   Future<List<Station>> getStations() async {
-    // Simulamos un pequeño delay realista de red
+
     await Future.delayed(const Duration(milliseconds: 500));
     return [
       Station(
